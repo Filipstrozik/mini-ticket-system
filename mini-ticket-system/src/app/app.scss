@@ -1,0 +1,26 @@
+
+.app-container {
+    padding: 1em 2rem;
+    box-sizing: border-box;
+}
+
+.app-toolbar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}

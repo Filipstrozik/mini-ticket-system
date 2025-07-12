@@ -1,0 +1,6 @@
+@MiniTicketSystem_HostAddress = http://localhost:5118
+
+GET {{MiniTicketSystem_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

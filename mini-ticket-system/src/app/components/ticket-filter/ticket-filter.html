@@ -1,0 +1,22 @@
+<mat-form-field>
+  <mat-label>Filter by status</mat-label>
+  <mat-select
+    [(value)]="selectedStatusId"
+    (selectionChange)="onStatusChange($event)"
+  >
+    @for (status of statuses; track status.id) {
+    <mat-option [value]="status.id">
+      {{ status.name }}
+    </mat-option>
+    }
+  </mat-select>
+  <button
+    mat-icon-button
+    matSuffix
+    type="button"
+    (click)="clearFilter($event)"
+    aria-label="Clear filter"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>

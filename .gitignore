@@ -1,0 +1,74 @@
+# .NET 9 Core
+bin/
+obj/
+out/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+*.vscode/
+*.dbmdl
+*.pdb
+*.cache
+*.log
+*.nupkg
+*.snupkg
+*.psess
+*.vsp
+*.vspx
+*.tmp
+*.bak
+*.swp
+*.sln.ide
+TestResults/
+.nuget/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.ide
+*.tlog
+*.coverage
+*.coveragexml
+*.testsettings
+*.vspscc
+*.vssscc
+*.publish.xml
+*.dbmdl
+*.jfm
+*.DS_Store
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+
+# Angular 20
+node_modules/
+dist/
+tmp/
+out-tsc/
+coverage/
+.angular/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.env
+.env.*
+/src/environments/environment*.ts
+
+# Mac system files
+.DS_Store
+
+# End of file

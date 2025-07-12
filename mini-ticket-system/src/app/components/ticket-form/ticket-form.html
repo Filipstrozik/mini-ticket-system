@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>@if (isEditMode) {Edit} @else {Add} Ticket</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        class="description"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="statusId">
+        @for (status of statuses; track status.id) {
+        <mat-option [value]="status.id">
+          {{ status.name }}
+        </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button matButton="outlined" mat-dialog-close>Close</button>
+    <button
+      matButton="outlined"
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      @if (isEditMode) {Update} @else {Create}
+    </button>
+  </div>
+</form>

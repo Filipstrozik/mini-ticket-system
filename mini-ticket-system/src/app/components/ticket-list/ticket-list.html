@@ -1,0 +1,11 @@
+<div class="ticket-list-header">
+  <h2>Ticket List ({{ tickets.length }})</h2>
+  <app-create-ticket></app-create-ticket>
+</div>
+<app-ticket-filter (filterChange)="onFilterChange($event)"></app-ticket-filter>
+<mat-divider></mat-divider>
+<div class="ticket-list">
+  @for (ticket of filteredTickets; track ticket.id) {
+  <app-ticket-item [ticket]="ticket"></app-ticket-item>
+  }
+</div>

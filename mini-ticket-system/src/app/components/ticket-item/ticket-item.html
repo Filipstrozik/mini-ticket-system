@@ -1,0 +1,19 @@
+<mat-card appearance="outlined" class="ticket-card">
+  <mat-card-header>
+    <mat-card-title class="ticket-title">
+      {{ ticket.title }}
+    </mat-card-title>
+    <mat-card-subtitle class="ticket-status">
+      {{ ticket.statusName }}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content class="ticket-description">
+    <p>{{ ticket.description }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button matButton="outlined" color="primary" (click)="onEdit()">
+      Edit
+    </button>
+  </mat-card-actions>
+</mat-card>
