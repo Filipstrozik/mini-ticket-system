@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -9,7 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { TicketStatus } from '../../models/ticket-status';
-import { TicketService } from '../../services/ticket';
+import { TicketService } from '../../services/ticket.service';
 import {
   MatDialogActions,
   MatDialogClose,
@@ -33,10 +33,10 @@ import { MatDialogRef } from '@angular/material/dialog';
     MatDialogClose,
     MatButtonModule,
   ],
-  templateUrl: './ticket-form.html',
-  styleUrl: './ticket-form.scss',
+  templateUrl: './ticket-form.component.html',
+  styleUrl: './ticket-form.component.scss',
 })
-export class TicketForm {
+export class TicketForm implements OnInit {
   form: FormGroup;
   statuses: TicketStatus[] = [];
   isEditMode = false;

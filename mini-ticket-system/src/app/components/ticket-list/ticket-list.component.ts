@@ -1,18 +1,18 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TicketService } from '../../services/ticket';
+import { TicketService } from '../../services/ticket.service';
 import { Ticket } from '../../models/ticket';
 import { Subscription } from 'rxjs';
-import { TicketItem } from '../ticket-item/ticket-item';
-import { TicketFilter } from '../ticket-filter/ticket-filter'; // <-- import
+import { TicketItem } from '../ticket-item/ticket-item.component';
+import { TicketFilter } from '../ticket-filter/ticket-filter.component';
 import { MatDividerModule } from '@angular/material/divider';
-import { CreateTicket } from '../create-ticket/create-ticket';
+import { CreateTicket } from '../create-ticket/create-ticket.component';
 
 @Component({
   selector: 'app-ticket-list',
   standalone: true,
-  imports: [TicketItem, TicketFilter, MatDividerModule, CreateTicket], // <-- add TicketFilter
-  templateUrl: './ticket-list.html',
-  styleUrl: './ticket-list.scss',
+  imports: [TicketItem, TicketFilter, MatDividerModule, CreateTicket],
+  templateUrl: './ticket-list.component.html',
+  styleUrl: './ticket-list.component.scss',
 })
 export class TicketList implements OnInit, OnDestroy {
   tickets: Ticket[] = [];
@@ -59,9 +59,5 @@ export class TicketList implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub?.unsubscribe();
-  }
-
-  trackById(index: number, ticket: Ticket) {
-    return ticket.id;
   }
 }

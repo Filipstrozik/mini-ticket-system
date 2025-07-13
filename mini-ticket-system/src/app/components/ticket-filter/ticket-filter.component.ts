@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { TicketService } from '../../services/ticket';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { TicketService } from '../../services/ticket.service';
 import { Ticket } from '../../models/ticket';
 import { TicketStatus } from '../../models/ticket-status';
 import { FormsModule } from '@angular/forms';
@@ -20,14 +20,16 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatIconModule,
   ],
-  templateUrl: './ticket-filter.html',
-  styleUrl: './ticket-filter.scss',
+  templateUrl: './ticket-filter.component.html',
+  styleUrl: './ticket-filter.component.scss',
 })
-export class TicketFilter {
+export class TicketFilter implements OnInit {
   @Output() filterChange = new EventEmitter<string | null>();
   statuses: TicketStatus[] = [];
 
-  constructor(private ticketService: TicketService) {
+  constructor(private ticketService: TicketService) {}
+
+  ngOnInit() {
     this.ticketService.getStatuses().subscribe((statuses) => {
       this.statuses = statuses;
     });

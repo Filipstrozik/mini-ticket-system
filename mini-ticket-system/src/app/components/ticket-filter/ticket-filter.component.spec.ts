@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TicketForm } from './ticket-form';
+import { TicketFilter } from './ticket-filter.component';
 
-describe('TicketForm', () => {
-  let component: TicketForm;
-  let fixture: ComponentFixture<TicketForm>;
+describe('TicketFilter', () => {
+  let component: TicketFilter;
+  let fixture: ComponentFixture<TicketFilter>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TicketForm]
-    })
-    .compileComponents();
+      imports: [TicketFilter],
+    }).compileComponents();
 
-    fixture = TestBed.createComponent(TicketForm);
+    fixture = TestBed.createComponent(TicketFilter);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
