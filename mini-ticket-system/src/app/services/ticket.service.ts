@@ -35,4 +35,8 @@ export class TicketService {
   notifyTicketsChanged() {
     this.ticketsChangedSubject.next();
   }
+
+  deleteTicket(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/tickets/${id}`);
+  }
 }

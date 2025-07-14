@@ -32,6 +32,15 @@ public interface ITicketService
     /// <param name="ticket">The ticket update DTO.</param>
     /// <returns>The updated ticket DTO.</returns>
     public Task<TicketReadDto> UpdateTicket(Guid id, TicketUpdateDto ticket);
+
+
+    /// <summary>
+    /// Deletes a ticket by its ID.
+    /// </summary>
+    /// <param name="id">The ID of the ticket to delete.</param>
+    /// <returns>A boolean indicating whether the deletion was successful.</returns>
+    /// <exception cref="KeyNotFoundException">Thrown when the ticket with the specified ID
+    public Task<bool> DeleteTicket(Guid id);
 }
 
 /// <summary>
@@ -69,15 +78,6 @@ public class TicketService : ITicketService
         var newTicket = _mapper.Map<Ticket>(ticketDto);
         newTicket.Status = status;
 
-        // manualy but not recommended
-        // var newTicket = new Ticket
-        // {
-        //     Title = ticket.Title,
-        //     Description = ticket.Description,
-        //     StatusId = ticket.StatusId,
-        //     Status = status,
-        // };
-
         _context.Tickets.Add(newTicket);
         await _context.SaveChangesAsync();
         return _mapper.Map<TicketReadDto>(newTicket);
@@ -99,5 +99,16 @@ public class TicketService : ITicketService
         await _context.SaveChangesAsync();
 
         return _mapper.Map<TicketReadDto>(existingTicket);
+    }
+
+    /// <inheritdoc/>
+    public async Task<bool> DeleteTicket(Guid id)
+    {
+        var existingTicket = await _context.Tickets.FindAsync(id)
+                     ?? throw new KeyNotFoundException("Ticket not found");
+
+        var result = _context.Tickets.Remove(existingTicket);
+        await _context.SaveChangesAsync();
+        return result != null;
     }
 }

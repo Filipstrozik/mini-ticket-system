@@ -59,4 +59,22 @@ public class TicketsController : ControllerBase
         TicketReadDto updatedTicket = await _ticketService.UpdateTicket(id, ticketDto);
         return Ok(updatedTicket);
     }
+
+    /// <summary>
+    /// Deletes a ticket by its ID.
+    /// </summary>
+    /// <param name="id">The ID of the ticket to delete.</param>
+    /// <returns>A 204 No Content response if successful, or a 404 Not Found
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteTicket(Guid id)
+    {
+        var result = await _ticketService.DeleteTicket(id);
+        if (result)
+        {
+            return NoContent();
+        }
+        return NotFound();
+
+    }
 }
