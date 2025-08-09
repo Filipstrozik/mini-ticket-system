@@ -13,13 +13,13 @@ namespace MiniTicketSystem.Controllers;
 [ApiController]
 public class TicketsController : ControllerBase
 {
-    private readonly TicketService _ticketService;
+    private readonly ITicketService _ticketService;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TicketsController"/> class.
     /// </summary>
     /// <param name="ticketService">The ticket service instance.</param>
-    public TicketsController(TicketService ticketService)
+    public TicketsController(ITicketService ticketService)
     {
         _ticketService = ticketService ?? throw new ArgumentNullException(nameof(ticketService));
     }

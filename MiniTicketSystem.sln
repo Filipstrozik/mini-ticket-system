@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniTicketSystem", "MiniTicketSystem\MiniTicketSystem.csproj", "{7F030356-9469-4A8E-AF2C-238688192F95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniTicketSystem.Test", "MiniTicketSystem.Test\MiniTicketSystem.Test.csproj", "{BDFA0CA1-2C7B-463B-A334-225B50764143}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,18 @@ Global
 		{7F030356-9469-4A8E-AF2C-238688192F95}.Release|x64.Build.0 = Release|Any CPU
 		{7F030356-9469-4A8E-AF2C-238688192F95}.Release|x86.ActiveCfg = Release|Any CPU
 		{7F030356-9469-4A8E-AF2C-238688192F95}.Release|x86.Build.0 = Release|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Debug|x64.Build.0 = Debug|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Debug|x86.Build.0 = Debug|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Release|x64.ActiveCfg = Release|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Release|x64.Build.0 = Release|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Release|x86.ActiveCfg = Release|Any CPU
+		{BDFA0CA1-2C7B-463B-A334-225B50764143}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
