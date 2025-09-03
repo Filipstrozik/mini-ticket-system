@@ -21,7 +21,7 @@ builder.Services.AddDbContext<TicketContext>(options =>
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
-builder.Services.AddScoped<TicketService>();
+builder.Services.AddScoped<ITicketService, TicketService>();
 
 var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
 
